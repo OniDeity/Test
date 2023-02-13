@@ -1,12 +1,37 @@
+# Favors
+These changes made will allow us to structure and moderate Carousing dowetimes as well as create a tangable way to progress with downtimes other than the xp given and gold given out. This also allows us as DMs to have weight with the favors given out as they can actually effect the game more with this change. Numbers and percentages for rewards and discounts will be discussed if this is allowed to be used. 
+
+Favors no longer subscribe to a single city and may be used outside the city it was gained in at the "Out of Category Bonus" modifier amount. If the favor is used in the same city under the same category only then will a player recive the full bonus for the class of the Favor.
+
+To keep track of a Favor given out use this outline.
+```
+Player:
+Character:
+Favor: <City> <Class> <Category>
+DM:
+```
+ 
+As an example:
+```
+Player: Legion 
+Character: Ember 
+Favor: Ahms Lower Crime
+DM: Legion
+```
+
+## Class of Favors
+Class of Favor corresponds to the ammount of gold a player spends on the Carousing; Lower (5gp), Middle (25gp), and Upper (125gp) respectively will give bonuses to downtime rolls as represented below.
 Class | Bonus to Rolls | Out of Category Bonus
 :--: | :--: | :--: 
 Upper | +5 | +3
 Middle | +3 | +1
 Lower | +1 | +0
 
+## Category of Favors
+Instead of giving a Favor regarding a single downtime, a DM can choose what "Category" of Favor a player gets for their downtime. The seven categories below outline what each Favor can do. More than one catagory can be given out for a sucessful Carousing Downtime. 
 Category | Cost of 6 Favors | Cost of 4 Favors | Cost of 1 Favor | Special
 :--: | :--: | :--: | :--: | :--:
-Reputation | Guild Backing | - | - | Use 2 to get out of any consquence from downtimes
+Reputation | Guild Backing | - | Recruit a Trainer | Use 2 to get out of any consquence from a downtime
 Monetary | Guild Backing; "Merchant" Reputation Point | Coin Reward | Double Rewards for: Gambling, Work, Religious Service Downtimes | -
 Work | Guild Backing; "Work Horse" Reputation Point | - | Double Rewards for: Work Downtimes; Reduce Cost of Crafting Mundane item; Reduce Cost of Crafting Sessions for Magic Items | -  
 Commision | "Artist" Reputation Point | Art Show | Double Rewards for: Work, Gambling Downtimes | -
@@ -21,7 +46,7 @@ In addition players may now buy additional things with their Favors they gained.
 Item | Effect
 :--: | :--:
 Guild Backing | In order to create a guild a player must gain a "Guild Backing" from three Categories: Those three being Work, Monetary, and Reputation. The Class of the Favor must be at least Middle in order to redeem a "Guild Backing".
-Reputation Points | These points give players additional rewards for their categories and may allow more advanced downtimes to be done.
+Reputation Points | (Work in Progress) These points give players additional rewards for their categories and may allow more advanced downtimes to be done.
 Special Jobs | These are the "Art Show", "Special Job", "Heist", and "Research Expidition" redeemable items. Each of these allow a player to do a "quest" but also takes two downtimes to complete. A DM can pick up these quests at their own leisure. 
 
 Special Jobs:
