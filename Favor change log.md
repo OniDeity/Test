@@ -52,7 +52,7 @@ Special Jobs | These are the "Art Show", "Special Job", "Hiest", and "Research E
 Special Jobs:
 - Art Show: In this a player may create an art show, showing of their gems, and art they have collected. During this art show NPCs will try to steal art from the show and get it out before the player can catch them. As a reward the player gets as much gold value as they put in the art show without having to actually sell the items.
 - Special Job: This is a Hitman's job or a crews job. The person that initiated this job will get to choose a target to try to assassinate or capture. This target can be any NPC a DM has ran before and must only be an NPC. As a reward a player gets 3x the reward amount for bounty hunts done for the next 5 bounty hunts.
-- Hiest: Straight forward a player or crew are trying to infultrate an area and get coin and other items out. Player reward varies. 
+- Hiest: Straight forward a player or crew are trying to infiltrate an area and get coin and other items out. Player reward varies. 
 - Research Expedition: Players can form an expedition group that goes and find the materials for three recipes of their choosing. On this expedition if sucessful the player will gain enough crafting material to make at least one of the three items.
 - Caravan: A player may gather a caravan of merchants and other people to travel to a city with. During this time bandits and monsters may come attack the caravan. Rewards: Carousing costs reduced for the next five Carousings done within the city the Caravan went to. 
 - More to come!
