@@ -1,5 +1,5 @@
 # Favors
-These changes made will allow us to structure and moderate Carousing dowetimes as well as create a tangable way to progress with downtimes other than the xp given and gold given out. This also allows us as DMs to have weight with the favors given out as they can actually effect the game more with this change. Numbers and percentages for rewards and discounts will be discussed if this is allowed to be used. 
+These changes made will allow us to structure and moderate Carousing dowetimes as well as create a tangable way to progress with downtimes other than the xp given and gold given out. This also allows us as DMs to have weight with the favors given out as they can actually affect the game more with this change. Numbers and percentages for rewards and discounts will be discussed if this is allowed to be used. 
 
 Favors no longer subscribe to a single city and may be used outside the city it was gained in at the "Out of Category Bonus" modifier amount. If the favor is used in the same city under the same category only then will a player recive the full bonus for the class of the Favor.
 
