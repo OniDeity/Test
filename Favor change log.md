@@ -47,7 +47,7 @@ Item | Effect
 :--: | :--:
 Guild Backing | In order to create a guild a player must gain a "Guild Backing" from three Categories: Those three being Work, Monetary, and Reputation. The Class of the Favor must be at least Middle in order to redeem a "Guild Backing".
 Reputation Points | (Work in Progress) These points give players additional rewards for their categories and may allow more advanced downtimes to be done.
-Special Jobs | These are the "Art Show", "Special Job", "Heist", and "Research Expidition" redeemable items. Each of these allow a player to do a "quest" but also takes two of their downtimes to complete. A DM can pick up these quests at their own leisure. 
+Special Jobs | These are the "Art Show", "Special Job", "Hiest", and "Research Expedition" redeemable items. Each of these allow a player to do a "quest" but also takes two of their downtimes to complete. A DM can pick up these quests at their own leisure. 
 
 Special Jobs:
 - Art Show: In this a player may create an art show, showing of their gems, and art they have collected. During this art show NPCs will try to steal art from the show and get it out before the player can catch them. As a reward the player gets as much gold value as they put in the art show without having to actually sell the items.
