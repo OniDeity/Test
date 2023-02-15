@@ -20,7 +20,7 @@ DM: Legion
 ```
 
 ## Class of Favors
-Class of Favor corresponds to the ammount of gold a player spends on the Carousing; Lower (5gp), Middle (25gp), and Upper (125gp) respectively will give bonuses to downtime rolls as represented below.
+Class of Favor corresponds to the ammount of gold a player spends on the Carousing; Lower (5gp), Middle (25gp), and Upper (125gp) respectively will give bonuses to downtime rolls as represented below. These classes dont determine the actual wealth of the person that gave the Favor, just the ammount of gold a player used to Carouse with.
 Class | Bonus to Rolls | Out of Category Bonus
 :--: | :--: | :--: 
 Upper | +5 | +3
@@ -45,12 +45,12 @@ Only one Favor may be used on any one Downtime. This bonus to rolls made stays u
 In addition players may now buy additional things with their Favors they gained. The added "items" will be noted below:
 Item | Effect
 :--: | :--:
-Guild Backing | In order to create a guild a player must gain a "Guild Backing" from three Categories: Those three being Work, Monetary, and Reputation. The Class of the Favor must be at least Middle in order to redeem a "Guild Backing".
+Guild Backing | (Work in Progress) In order to create a guild a player must gain a "Guild Backing" from three Categories: Those three being Work, Monetary, and Reputation. The Class of the Favor must be at least Middle in order to redeem a "Guild Backing".
 Reputation Points | (Work in Progress) These points give players additional rewards for their categories and may allow more advanced downtimes to be done.
 Special Jobs | These are the "Art Show", "Special Job", "Hiest", and "Research Expedition" redeemable items. Each of these allow a player to do a "quest" but also takes two of their downtimes to complete. A DM can pick up these quests at their own leisure. 
 
 Special Jobs:
-- Art Show: In this a player may create an art show, showing of their gems, and art they have collected. During this art show NPCs will try to steal art from the show and get it out before the player can catch them. As a reward the player gets as much gold value as they put in the art show without having to actually sell the items.
+- Art Show: In this a player may create an art show, showing off their gems, and art they have collected (Not magical items). During this art show NPCs will try to steal art from the show and get it out before the player can catch them. As a reward the player gets as much gold value as they put in the art show without having to actually sell the items.
 - Special Job: This is a Hitman's job or a crews job. The person that initiated this job will get to choose a target to try to assassinate or capture. This target can be any NPC a DM has ran before and must only be an NPC. As a reward a player gets 3x the reward amount for bounty hunts done for the next 5 bounty hunts.
 - Hiest: Straight forward a player or crew are trying to infiltrate an area and get coin and other items out. Player reward varies. 
 - Research Expedition: Players can form an expedition group that goes and find the materials for three recipes of their choosing. On this expedition if sucessful the player will gain enough crafting material to make at least one of the three items.
