@@ -20,7 +20,7 @@ DM: Legion
 ```
 
 ## Class of Favors
-Class of Favor corresponds to the ammount of gold a player spends on the Carousing; Lower (5gp), Middle (25gp), and Upper (125gp) respectively will give bonuses to downtime rolls as represented below. These classes dont determine the actual wealth of the person that gave the Favor, just the ammount of gold a player used to Carouse with.
+Class of Favor corresponds to the amount of gold a player spends on the Carousing; Lower (5gp), Middle (25gp), and Upper (125gp) respectively will give bonuses to downtime rolls as represented below. These classes dont determine the actual wealth of the person that gave the Favor, just the ammount of gold a player used to Carouse with.
 Class | Bonus to Rolls | Out of Category Bonus
 :--: | :--: | :--: 
 Upper | +5 | +3
