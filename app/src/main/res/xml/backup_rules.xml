@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Sensitive prefs (auth token) live in EncryptedSharedPreferences/Keystore-backed
+   storage and are excluded from backup; only non-secret settings are restored.
+-->
+<full-backup-content>
+    <exclude domain="sharedpref" path="secure_prefs.xml" />
+</full-backup-content>

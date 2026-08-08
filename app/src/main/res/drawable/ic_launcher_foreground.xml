@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Simple game-cartridge glyph, standing in for a real app icon. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,38 h40 a10,10 0 0 1 10,10 v22 a10,10 0 0 1 -10,10 h-40 a10,10 0 0 1 -10,-10 v-22 a10,10 0 0 1 10,-10 z" />
+    <path
+        android:fillColor="#1B1B1F"
+        android:pathData="M44,54 h6 v6 h6 v6 h-6 v6 h-6 v-6 h-6 v-6 h6 z" />
+    <path
+        android:fillColor="#1B1B1F"
+        android:pathData="M70,52 a4,4 0 1 1 0,8 a4,4 0 0 1 0,-8 z" />
+    <path
+        android:fillColor="#1B1B1F"
+        android:pathData="M80,60 a4,4 0 1 1 0,8 a4,4 0 0 1 0,-8 z" />
+</vector>
