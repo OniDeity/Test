@@ -20,12 +20,18 @@ class RommSession(
     @Volatile
     private var cachedApi: RommApi? = null
 
-    /** Call once at app start to keep [api] in sync as the server URL changes. */
+    /** Call once at app start to keep [api] in sync as the server URL changes elsewhere (e.g. Settings). */
     suspend fun watchServerUrl() {
         settingsRepository.serverUrl.filterNotNull().distinctUntilChanged().collect { url ->
-            cachedBaseUrl = url
-            cachedApi = RommApiFactory.create(url) { tokenStore.getToken() }
+            useServerUrl(url)
         }
+    }
+
+    /** Synchronously (re)builds the client for [url] — no network call, so no race to wait out. */
+    fun useServerUrl(url: String) {
+        if (url == cachedBaseUrl) return
+        cachedBaseUrl = url
+        cachedApi = RommApiFactory.create(url) { tokenStore.getToken() }
     }
 
     /** The current [RommApi], if a server URL has been configured. */

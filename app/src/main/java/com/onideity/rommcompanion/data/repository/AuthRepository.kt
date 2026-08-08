@@ -33,6 +33,12 @@ class AuthRepository(
 ) {
     val isPaired: Flow<Boolean> = settingsRepository.pairedDeviceId.map { it != null }
 
+    /** Persists [url] and rebuilds the API client for it, synchronously — call before [startPairing]. */
+    suspend fun configureServer(url: String) {
+        settingsRepository.setServerUrl(url)
+        session.useServerUrl(url)
+    }
+
     suspend fun startPairing(): DeviceAuthInitResponse {
         val clientDeviceIdentifier = settingsRepository.getOrCreateClientDeviceIdentifier()
         return session.requireApi().initDevicePairing(
