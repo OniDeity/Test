@@ -2,6 +2,17 @@
 
 Compiled reference for learning to mod with [gen1recomp](https://github.com/bryanthaboi/gen1recomp) (a Pokémon Gen 1 recompilation/modding engine). Sources: the project [wiki](https://github.com/bryanthaboi/gen1recomp/wiki) and the [gen1recomp-mod-index](https://github.com/bryanthaboi/gen1recomp-mod-index) repo. Compiled 2026-08-11.
 
+## Topic Playbooks (this repo)
+
+Working-notes-style guides, each pulling exact schemas/quotes from the wiki plus documented pitfalls, written while building a Celadon City shop mod:
+
+- [`gen1recomp-warps-and-buildings-guide.md`](./gen1recomp-warps-and-buildings-guide.md) — new maps, connections vs. warps, the `destWarp` index cross-referencing, and the `__append` list-patch gotcha
+- [`gen1recomp-tiles-and-art-guide.md`](./gen1recomp-tiles-and-art-guide.md) — custom tiles/tilesets, the 4-shade pixel contract, asset transforms
+- [`gen1recomp-npc-guide.md`](./gen1recomp-npc-guide.md) — adding NPCs (static vs. dynamic) and dialogue scripts
+- [`gen1recomp-shop-guide.md`](./gen1recomp-shop-guide.md) — marts/shop inventory and wiring a clerk NPC to `open_mart`
+- [`gen1recomp-music-guide.md`](./gen1recomp-music-guide.md) — custom music, chiptune authoring, conditional music hooks
+- [`gen1recomp-species-guide.md`](./gen1recomp-species-guide.md) — registering a new catchable Pokémon species
+
 ## Learning Path (Wiki)
 
 Base URL for all wiki pages: `https://github.com/bryanthaboi/gen1recomp/wiki/<page>`
