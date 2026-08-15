@@ -61,3 +61,19 @@ def test_build_system_prompt_handles_no_traits_or_boundaries():
     prompt = build_system_prompt(personality, [])
     assert "friendly, curious" in prompt
     assert "Keep it friendly and on-topic." in prompt
+
+
+def test_build_system_prompt_test_mode_omits_chat_and_topic_bullets():
+    personality = Personality(name="Nova")
+    prompt = build_system_prompt(personality, ["main_monitor"], test_mode=True)
+    assert "[TWITCH CHAT]" not in prompt
+    assert "[TOPIC IDEA]" not in prompt
+    assert "private test session" in prompt
+    assert "main_monitor" in prompt
+
+
+def test_build_system_prompt_default_is_not_test_mode():
+    personality = Personality(name="Nova")
+    prompt = build_system_prompt(personality, ["main_monitor"])
+    assert "[TWITCH CHAT]" in prompt
+    assert "[TOPIC IDEA]" in prompt

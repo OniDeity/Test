@@ -65,6 +65,21 @@ it exactly like it sees your game.
    ```
    Console output shows a live transcript of both sides of the conversation.
 
+## Offline/solo test mode
+
+To try the companion out without setting up Twitch/YouTube chat or a topics file first,
+run it with `--test-mode` (or `-t`):
+
+```
+python -m companion.app --test-mode
+```
+
+This still needs your Gemini API key and internet access (it's "offline" in the sense
+of no live chat/topic integration, not literally no network) - it just skips connecting
+to chat and skips topic nudges, so it's purely reacting to your screen and voice. Handy
+for checking your personality profile, mic/speaker setup, and screen regions sound and
+look right before going live. Drop `--test-mode` once you're ready to actually stream.
+
 ## Configuring personality
 
 Edit `config/personalities/default.yaml` (or create a new file and point

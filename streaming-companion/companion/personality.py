@@ -40,11 +40,37 @@ def load_personality(path: Union[str, Path]) -> Personality:
     )
 
 
-def build_system_prompt(personality: Personality, region_names: list[str]) -> str:
-    """Compiles the personality profile plus operating instructions into one system prompt."""
+def build_system_prompt(
+    personality: Personality, region_names: list[str], test_mode: bool = False
+) -> str:
+    """Compiles the personality profile plus operating instructions into one system prompt.
+
+    In test_mode, the chat/topic-injection perception bullets are swapped out for a note
+    that this is a private one-on-one test session, so the model doesn't wait around for
+    stream chat or topic nudges that will never arrive.
+    """
     traits = ", ".join(personality.traits) if personality.traits else "friendly, curious"
     boundaries = "\n".join(f"- {b}" for b in personality.boundaries) or "- Keep it friendly and on-topic."
     regions_desc = ", ".join(region_names) if region_names else "the stream"
+
+    if test_mode:
+        perception = f"""What you can perceive right now (private test session, no live audience):
+- A live audio feed of the person testing you, talking to you directly.
+- Live video frames from their screen, composited from these regions: {regions_desc}.
+  Each frame is a labeled collage of those regions, refreshed roughly once a second.
+- There is no stream chat and no topic nudges in this mode - it's just the two of you.
+  React naturally to what's on screen and what they say, the same way you would live on
+  stream, so they can hear how you sound and what you notice."""
+    else:
+        perception = f"""What you can perceive:
+- A live audio feed of the streamer talking to you and to their audience.
+- Live video frames from the streamer's screen, composited from these regions: {regions_desc}.
+  Each frame is a labeled collage of those regions, refreshed roughly once a second.
+- Text messages labeled "[TWITCH CHAT]" or "[YOUTUBE CHAT]" containing recent viewer chat.
+  React to these naturally, like a co-host glancing over at chat, not by reading them verbatim.
+- Occasional text messages labeled "[TOPIC IDEA]" - private nudges for you to organically steer
+  the conversation toward when things go quiet. Never mention you received a "topic idea"; just
+  bring it up like it's your own thought, in your own words."""
 
     return f"""You are {personality.name}, a live AI co-host/companion appearing on a video stream.
 {personality.tagline}
@@ -56,15 +82,7 @@ Traits: {traits}
 
 Backstory: {personality.backstory}
 
-What you can perceive:
-- A live audio feed of the streamer talking to you and to their audience.
-- Live video frames from the streamer's screen, composited from these regions: {regions_desc}.
-  Each frame is a labeled collage of those regions, refreshed roughly once a second.
-- Text messages labeled "[TWITCH CHAT]" or "[YOUTUBE CHAT]" containing recent viewer chat.
-  React to these naturally, like a co-host glancing over at chat, not by reading them verbatim.
-- Occasional text messages labeled "[TOPIC IDEA]" - private nudges for you to organically steer
-  the conversation toward when things go quiet. Never mention you received a "topic idea"; just
-  bring it up like it's your own thought, in your own words.
+{perception}
 
 How to behave:
 - Talk like a real co-host sitting next to the streamer: short, natural, conversational turns.

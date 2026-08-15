@@ -37,10 +37,15 @@ class CompanionSession:
         personality: Personality,
         topic_bank: TopicBank,
         on_transcript: Optional[TranscriptCallback] = None,
+        test_mode: bool = False,
     ):
+        """test_mode=True skips connecting to Twitch/YouTube chat and disables topic
+        nudges, so you can run the companion solo against just your mic and screen to
+        hear how it sounds and reacts, without any chat/topic config in place."""
         self.settings = settings
         self.personality = personality
         self.on_transcript = on_transcript or (lambda who, text: None)
+        self.test_mode = test_mode
         self.topics = IdleTopicScheduler(topic_bank, settings.topics.idle_seconds_before_topic)
         self.chat = ChatAggregator()
         self._stop = asyncio.Event()
@@ -67,7 +72,7 @@ class CompanionSession:
         from google.genai import types
 
         region_names = [r.name for r in self.settings.regions]
-        system_prompt = build_system_prompt(self.personality, region_names)
+        system_prompt = build_system_prompt(self.personality, region_names, test_mode=self.test_mode)
 
         client = genai.Client(api_key=self.settings.gemini_api_key)
         live_config = types.LiveConnectConfig(
@@ -82,7 +87,10 @@ class CompanionSession:
             output_audio_transcription=types.AudioTranscriptionConfig(),
         )
 
-        self._setup_chat_sources()
+        if self.test_mode:
+            log.info("Test mode: skipping chat sources and topic nudges - screen + voice only.")
+        else:
+            self._setup_chat_sources()
 
         mic = MicStream(
             sample_rate=self.settings.audio.input_sample_rate,
@@ -99,13 +107,15 @@ class CompanionSession:
         try:
             async with client.aio.live.connect(model=self.settings.gemini.model, config=live_config) as session:
                 log.info("Connected. %s is live.", self.personality.name)
-                await asyncio.gather(
+                tasks = [
                     self._pump_audio(session, mic),
                     self._pump_video(session),
-                    self._pump_chat(session),
-                    self._pump_topics(session),
                     self._receive(session, speaker),
-                )
+                ]
+                if not self.test_mode:
+                    tasks.append(self._pump_chat(session))
+                    tasks.append(self._pump_topics(session))
+                await asyncio.gather(*tasks)
         finally:
             mic.stop()
             speaker.stop()

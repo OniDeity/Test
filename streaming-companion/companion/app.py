@@ -20,6 +20,15 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="AI streaming companion powered by the Gemini Live API")
     parser.add_argument("--settings", default="config/settings.yaml", help="Path to settings.yaml")
     parser.add_argument("--env", default=".env", help="Path to .env with API keys")
+    parser.add_argument(
+        "-t",
+        "--test-mode",
+        action="store_true",
+        help=(
+            "Offline/solo testing mode: skip Twitch/YouTube chat and topic nudges, so the "
+            "companion just reacts to your screen and voice. No chat or topics config needed."
+        ),
+    )
     parser.add_argument("-v", "--verbose", action="store_true")
     args = parser.parse_args()
 
@@ -29,7 +38,13 @@ def main() -> None:
     personality = load_personality(settings.personality_file)
     topic_bank = load_topics(settings.topics.file)
 
-    session = CompanionSession(settings, personality, topic_bank, on_transcript=_print_transcript)
+    session = CompanionSession(
+        settings,
+        personality,
+        topic_bank,
+        on_transcript=_print_transcript,
+        test_mode=args.test_mode,
+    )
 
     try:
         asyncio.run(session.run())
