@@ -1,0 +1,11 @@
+# Topics the companion can bring up on its own when the stream goes quiet.
+# Copy/edit freely - these are cycled in order, then looped.
+
+cooldown_seconds: 300
+
+topics:
+  - "Ask the streamer what they think of the current game's difficulty so far."
+  - "Bring up a fun hypothetical, like what pet would suit the streamer's personality."
+  - "Check in on chat's energy and ask if anyone has a question for the streamer."
+  - "Ask if there's a recent play or decision the streamer is proud of."
+  - "Bring up a lighthearted 'this or that' question related to what's on screen."

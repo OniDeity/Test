@@ -1,0 +1,56 @@
+# Copy this file to config/settings.yaml and edit it for your setup.
+# Secrets (API keys) go in .env, not here - see .env.example.
+
+gemini:
+  # Check https://ai.google.dev/gemini-api/docs/live for the current Live API model id.
+  model: gemini-live-2.5-flash-preview
+  # Any Gemini prebuilt voice name, e.g. Puck, Charon, Kore, Fenrir, Aoede.
+  voice: Puck
+  # Frames per second of screen sent to Gemini. 1 is the recommended default for Live.
+  fps: 1
+
+audio:
+  # Leave null to use your system default mic/speaker. Set to a device name substring
+  # to pick a specific one (run `python -c "import sounddevice; print(sounddevice.query_devices())"`
+  # to list devices). Point speaker_device at a virtual audio cable to route the
+  # companion's voice into OBS/Discord as a "microphone".
+  mic_device: null
+  speaker_device: null
+  input_sample_rate: 16000
+  output_sample_rate: 24000
+
+# Screen regions the companion can "see". Use `python -m companion.region_picker <name>`
+# to drag-select a region and print its coordinates.
+regions:
+  - name: main_monitor
+    x: 0
+    y: 0
+    width: 1920
+    height: 1080
+    description: "Main monitor - game/gameplay view"
+  - name: discord_call
+    x: 1930
+    y: 100
+    width: 640
+    height: 480
+    description: "Discord call window (treated as a plain screen region)"
+
+chat:
+  twitch:
+    enabled: true
+    channel: your_twitch_channel
+  youtube:
+    enabled: false
+    # The video ID of your currently-live broadcast (from the watch URL).
+    video_id: ""
+  # How often (seconds) to batch up new chat messages and hand them to the companion.
+  inject_interval_seconds: 8
+  # Max chat messages included per batch, to avoid flooding the model.
+  max_messages_per_injection: 5
+
+topics:
+  idle_seconds_before_topic: 90
+  file: config/topics.example.yaml
+
+personality:
+  file: config/personalities/default.yaml
